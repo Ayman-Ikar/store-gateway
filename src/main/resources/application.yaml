@@ -1,0 +1,10 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: entity
+          uri: lb://entity
+          predicates:
+            - Path=/entity/**
+          filters:
+            - StripPrefix=1
